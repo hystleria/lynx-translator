@@ -2,7 +2,7 @@ module.exports = class Loader {
     constructor(translations) {
         this.translations = translations;
 
-        this.langs = ['en-UK', 'fi-FI'];
+        this.langs = ['en-UK', 'fi-FI', 'sv-SE'];
         this.loaded = false;
     }
 
@@ -16,6 +16,6 @@ module.exports = class Loader {
             this.translations.set(lang, translation);
         }
 	
-	if (this.translations.length == langs.length) this.loaded = true;
+	if (this.translations.length == this.langs.length) this.loaded = true;
     }
 };
