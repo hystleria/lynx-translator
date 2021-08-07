@@ -19,6 +19,8 @@ module.exports = class Translator {
 
         if (!string) string = this.translations.get(this.fallbackLang)[key];
 
+        if (!string) throw new Error(`Key does not exist in ${this.fallbackLang} or ${language}`);
+
         if (options.variables && options.variables.length) {
             for (const variable of options.variables) {
                 string = string.replace(new RegExp(`%${variable.key}%`, 'g'), variable.value);
