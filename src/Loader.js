@@ -13,8 +13,9 @@ module.exports = class Loader {
     load() {
         for (const lang of this.langs) {
             const translation = require(`../translations/${lang}.json`);
-        
             this.translations.set(lang, translation);
         }
+	
+	if (this.translations.length == langs.length) this.loaded = true;
     }
 };
