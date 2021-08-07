@@ -21,7 +21,7 @@ module.exports = class Translator {
 
         if (options.variables && options.variables.length) {
             for (const variable of options.variables) {
-                string = translation.replace(new RegExp(`%${variable.key}%`, 'g'), variable.value);
+                string = string.replace(new RegExp(`%${variable.key}%`, 'g'), variable.value);
             }
         }
 
