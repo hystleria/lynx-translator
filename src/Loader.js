@@ -11,7 +11,7 @@ module.exports = class Loader {
 	 * @returns {*}
 	 */
     load() {
-        for (const lang of langs) {
+        for (const lang of this.langs) {
             const translation = require(`../translations/${lang}.json`);
         
             this.translations.set(lang, translation);
