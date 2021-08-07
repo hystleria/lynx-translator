@@ -42,7 +42,7 @@ module.exports = class Translator {
 
         // Use default locale if a locale is not specified
         let locale;
-        if (options.locale || options.locale != null) locale = this.locales.get(options.locale);
+        if (options.locale && options.locale != null) locale = this.locales.get(options.locale);
         else locale = this.locales.get(this.defaultLocale);
 
         let translation;
