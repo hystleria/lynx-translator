@@ -1,7 +1,7 @@
 {
   "name": "lynx-translator",
   "version": "1.0.0",
-  "description": "Handles translations for Lynx.",
+  "description": "Translation service for Lynx.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
