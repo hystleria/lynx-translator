@@ -8,8 +8,6 @@ module.exports = class Translator {
         this.path = path; // Location of the locale files
         this.defaultLocale = defaultLocale; // Default locale to use if server has not configured it
         this.fallbackLocale = fallbackLocale; // Fallback to this locale if key does not exist in the default or specified locale
-
-
         this.logger = new Logger('YYYY-MM-DD HH:mm:ss');
     }
 
