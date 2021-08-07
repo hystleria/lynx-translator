@@ -1,32 +1,66 @@
+const { Logger } = require('lynx-logger');
+const { join } = require('path');
+const { readdirSync } = require('fs');
+
 module.exports = class Translator {
-    constructor(translations, defaultLang, fallbackLang) {
-        this.translations = translations
-        this.defaultLang = defaultLang;
-        this.fallbackLang = fallbackLang;
+    constructor(locales, defaultLocale, fallbackLocale) {
+        this.locales = locales; // Empty locale collection
+        this.defaultLocale = defaultLocale; // Default locale to use if server has not configured it
+        this.fallbackLocale = fallbackLocale; // Fallback to this locale if key does not exist in the default or specified locale
+
+        this.logger = new Logger('YYYY-MM-DD HH:mm:ss');
     }
 
-    translate(key, options) {
-        if (this.translations.size < 1) throw new Error('There are no translation files');
+    /**
+     * Loads locales
+	 * @returns {*}
+	 */
+    load() {
+        // Get the locales
+        const directory = join(process.cwd(), 'locales');
+        const locales = readdirSync(directory);
+        
+        if (!locales.length) {
+            this.logger.error('There are no locales', { prefix: '[Translator]' });
+            process.exit(1);
+        }
+        
+        // Load the locales
+        for (let i = 0; i < locales.length; i++) {
+            const lang = require(`../locales/${locales[i]}`);
+              
+            this.logger.info(`Locale ${lang.meta.code} has been loaded.`, { prefix: '[Translator]' });
+            this.locales.set(lang.meta.code, lang);
+        }
+    }
 
-        if (!options) options = {};
+    translate(key = null, options = {}) {
+        if (this.locales.size < 1) {
+            this.logger.error('There are no locales', { prefix: '[Translator]' });
+            process.exit(1);
+        }
 
-        let language;
-        let string;
+        // Use default locale if a locale is not specified
+        let locale;
+        if (options.locale || options.locale != null) locale = this.locales.get(options.locale);
+        else locale = this.locales.get(this.defaultLocale);
 
-        if (!options.language || options.language == null) language = this.defaultLang;
+        let translation;
+        if (this.locales.get(locale.meta.code)[key]) translation = this.locales.get(locale.meta.code)[key]; // Gets the translation
+        else translation = this.locales.get(this.fallbackLocale)[key] // Fallbacks to fallback locale if the key does not exist in the locale defined above
 
-        string = this.translations.get(language)[key];
+        if (!translation) {
+            this.logger.error(`Key '${key}' does not exist in '${locale.meta.code}', unable to fallback`, { prefix: '[Translator]' });
+            process.exit(1);
+        }
 
-        if (!string) string = this.translations.get(this.fallbackLang)[key];
-
-        if (!string) throw new Error(`Key does not exist in ${this.fallbackLang} or ${language}`);
-
+        // Replace any variables with their value
         if (options.variables && options.variables.length) {
             for (const variable of options.variables) {
-                string = string.replace(new RegExp(`%${variable.key}%`, 'g'), variable.value);
+                translation = translation.replace(new RegExp(`%${variable.key}%`, 'g'), variable.value);
             }
         }
 
-        return string;
+        return translation;
     }
 };
