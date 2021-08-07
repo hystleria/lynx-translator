@@ -3,11 +3,14 @@ const { join } = require('path');
 const { readdirSync } = require('fs');
 
 module.exports = class Translator {
-    constructor(locales, path, defaultLocale, fallbackLocale) {
+    constructor(locales, path, options) {
         this.locales = locales; // Empty locale collection
         this.path = path; // Location of the locale files
-        this.defaultLocale = defaultLocale; // Default locale to use if server has not configured it
-        this.fallbackLocale = fallbackLocale; // Fallback to this locale if key does not exist in the default or specified locale
+        this.options = options || {
+            defaultLocale: 'en-UK', // Default locale to use if server has not configured it
+            fallbackLocale: 'en-UK', // Fallback to this locale if key does not exist in the default or specified locale
+            logging: true // Whether logging should be enabled or disabled
+        };
         this.logger = new Logger('YYYY-MM-DD HH:mm:ss');
     }
 
@@ -28,9 +31,10 @@ module.exports = class Translator {
         // Load the locales
         for (let i = 0; i < locales.length; i++) {
             const lang = require(`../locales/${locales[i]}`);
-              
-            this.logger.info(`Locale ${lang.meta.code} has been loaded.`, { prefix: 'Translator' });
+
             this.locales.set(lang.meta.code, lang);
+
+            if (this.options.logging) this.logger.info(`Locale ${lang.meta.code} has been loaded`, { prefix: 'Translator' });
         }
     }
 
@@ -43,11 +47,11 @@ module.exports = class Translator {
         // Use default locale if a locale is not specified
         let locale;
         if (options.locale && options.locale != null) locale = this.locales.get(options.locale);
-        else locale = this.locales.get(this.defaultLocale);
+        else locale = this.locales.get(this.options.defaultLocale);
 
         let translation;
         if (this.locales.get(locale.meta.code)[key]) translation = this.locales.get(locale.meta.code)[key]; // Gets the translation
-        else translation = this.locales.get(this.fallbackLocale)[key] // Fallbacks to fallback locale if the key does not exist in the locale defined above
+        else translation = this.locales.get(this.options.fallbackLocale)[key] // Fallbacks to fallback locale if the key does not exist in the locale defined above
 
         if (!translation) {
             this.logger.error(`Key '${key}' does not exist in '${locale.meta.code}', unable to fallback`, { prefix: 'Translator' });
