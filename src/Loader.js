@@ -2,7 +2,7 @@ module.exports = class Loader {
     constructor(translations) {
         this.translations = translations;
 
-        this.langs = ['en-UK', 'fi-FI'];
+        this.langs = ['en-UK', 'fi-FI', 'sv-SE'];
         this.loaded = false;
     }
 
