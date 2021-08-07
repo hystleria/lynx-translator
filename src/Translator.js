@@ -20,7 +20,7 @@ module.exports = class Translator {
 	 */
     load() {
         // Get the locales
-        const directory = join(this.path, 'locales');
+        const directory = join(this.path);
         const locales = readdirSync(directory);
         
         if (!locales.length) {
