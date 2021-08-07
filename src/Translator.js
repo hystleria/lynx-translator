@@ -3,10 +3,12 @@ const { join } = require('path');
 const { readdirSync } = require('fs');
 
 module.exports = class Translator {
-    constructor(locales, defaultLocale, fallbackLocale) {
+    constructor(locales, path, defaultLocale, fallbackLocale) {
         this.locales = locales; // Empty locale collection
+        this.path = path; // Location of the locale files
         this.defaultLocale = defaultLocale; // Default locale to use if server has not configured it
         this.fallbackLocale = fallbackLocale; // Fallback to this locale if key does not exist in the default or specified locale
+
 
         this.logger = new Logger('YYYY-MM-DD HH:mm:ss');
     }
@@ -17,7 +19,7 @@ module.exports = class Translator {
 	 */
     load() {
         // Get the locales
-        const directory = join(process.cwd(), 'locales');
+        const directory = join(this.path, 'locales');
         const locales = readdirSync(directory);
         
         if (!locales.length) {
