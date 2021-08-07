@@ -6,9 +6,9 @@
     },
 
     "commands.permissions": "Du har inte behörighet att använda %name% kommandot.\nSaknas: `%missing%`",
-    "commands.arguments": "För få argument har angetts.\nAnvändning: %usage%",
+    "commands.arguments": "För få argument har angetts.\nAnvändning: `%usage%`",
     "commands.unknown": "Jag kunde inte hitta det kommandot eller modulen.",
-    "commands.invalidArgument": "Ogiltigt %arguments% argument  har angetts.\nAnvändning: %usage%",
+    "commands.invalidArgument": "Ogiltigt %arguments% argument har angetts.\nAnvändning: `%usage%`",
     
     "commands.admin.eval.maxOutputLength": "",
     "commands.admin.eval.hastebinUploading": "",
