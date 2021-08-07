@@ -21,7 +21,7 @@ module.exports = class Translator {
         const locales = readdirSync(directory);
         
         if (!locales.length) {
-            this.logger.error('There are no locales', { prefix: '[Translator]' });
+            this.logger.error('There are no locales', { prefix: 'Translator' });
             process.exit(1);
         }
         
@@ -29,14 +29,14 @@ module.exports = class Translator {
         for (let i = 0; i < locales.length; i++) {
             const lang = require(`../locales/${locales[i]}`);
               
-            this.logger.info(`Locale ${lang.meta.code} has been loaded.`, { prefix: '[Translator]' });
+            this.logger.info(`Locale ${lang.meta.code} has been loaded.`, { prefix: 'Translator' });
             this.locales.set(lang.meta.code, lang);
         }
     }
 
     translate(key = null, options = {}) {
         if (this.locales.size < 1) {
-            this.logger.error('There are no locales', { prefix: '[Translator]' });
+            this.logger.error('There are no locales', { prefix: 'Translator' });
             process.exit(1);
         }
 
@@ -50,7 +50,7 @@ module.exports = class Translator {
         else translation = this.locales.get(this.fallbackLocale)[key] // Fallbacks to fallback locale if the key does not exist in the locale defined above
 
         if (!translation) {
-            this.logger.error(`Key '${key}' does not exist in '${locale.meta.code}', unable to fallback`, { prefix: '[Translator]' });
+            this.logger.error(`Key '${key}' does not exist in '${locale.meta.code}', unable to fallback`, { prefix: 'Translator' });
             process.exit(1);
         }
 
