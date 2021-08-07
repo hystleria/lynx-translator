@@ -16,6 +16,6 @@ module.exports = class Loader {
             this.translations.set(lang, translation);
         }
 	
-	if (this.translations.length == langs.length) this.loaded = true;
+	if (this.translations.length == this.langs.length) this.loaded = true;
     }
 };
