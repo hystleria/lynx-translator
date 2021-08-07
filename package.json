@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/stathri/lynx-translator/issues"
   },
-  "homepage": "https://github.com/stathri/lynx-translator#readme"
+  "homepage": "https://github.com/stathri/lynx-translator#readme",
+  "dependencies": {
+    "lynx-logger": "git+https://github.com/stathri/lynx-logger.git"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
 }
