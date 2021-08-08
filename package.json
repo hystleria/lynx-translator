@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stathri/lynx-translator.git"
+    "url": "git+https://github.com/LynxDiscord/translator.git"
   },
   "author": "archie@laby.gg",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stathri/lynx-translator/issues"
+    "url": "https://github.com/LynxDiscord/translator/issues"
   },
-  "homepage": "https://github.com/stathri/lynx-translator#readme",
+  "homepage": "https://github.com/LynxDiscord/translator#readme",
   "dependencies": {
-    "lynx-logger": "git+https://github.com/stathri/lynx-logger.git"
+    "lynx-logger": "git+https://github.com/LynxDiscord/logger.git"
   },
   "devDependencies": {
     "eslint": "^7.32.0"
