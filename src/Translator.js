@@ -32,9 +32,9 @@ module.exports = class Translator {
         for (let i = 0; i < locales.length; i++) {
             const lang = require(`../locales/${locales[i]}`);
 
-            this.locales.set(lang.meta.code, lang);
+            this.locales.set(lang.meta.iso, lang);
 
-            if (this.options.logging) this.logger.info(`Locale ${lang.meta.code} has been loaded`, { prefix: 'Translator' });
+            if (this.options.logging) this.logger.info(`Locale ${lang.meta.iso} has been loaded`, { prefix: 'Translator' });
         }
     }
 
@@ -50,11 +50,11 @@ module.exports = class Translator {
         else locale = this.locales.get(this.options.defaultLocale);
 
         let translation;
-        if (this.locales.get(locale.meta.code)[key]) translation = this.locales.get(locale.meta.code)[key]; // Gets the translation
+        if (this.locales.get(locale.meta.iso)[key]) translation = this.locales.get(locale.meta.iso)[key]; // Gets the translation
         else translation = this.locales.get(this.options.fallbackLocale)[key] // Fallbacks to fallback locale if the key does not exist in the locale defined above
 
         if (!translation) {
-            this.logger.error(`Key '${key}' does not exist in '${locale.meta.code}', unable to fallback`, { prefix: 'Translator' });
+            this.logger.error(`Key '${key}' does not exist in '${locale.meta.iso}', unable to fallback`, { prefix: 'Translator' });
             process.exit(1);
         }
 
