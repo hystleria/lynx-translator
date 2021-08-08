@@ -3,7 +3,7 @@
         "name": "",
         "iso": "",
         "flag": "",
-        "authors": []
+        "authors": [{ "name": "", "id": "" }]
     },
 
     "commands.permissions": "",
