@@ -2,7 +2,7 @@
     "meta": {
         "name": "Swedish (Svenska)",
         "code": "sv-SE",
-        "author": "673477059904929802"
+        "authors": ["673477059904929802"]
     },
 
     "commands.permissions": "Du har inte behörighet att använda %name% kommandot.\nSaknas: `%missing%`",

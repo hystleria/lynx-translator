@@ -2,7 +2,7 @@
     "meta": {
         "name": "English (United Kingdom)",
         "code": "en-UK",
-        "author": "596879758244053002"
+        "authors": ["596879758244053002"]
     },
 
     "commands.permissions": "You do not have permission to use the `%name%` command.\nMissing: `%missing%`",
