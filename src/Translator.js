@@ -30,6 +30,8 @@ module.exports = class Translator {
         
         // Load the locales
         for (let i = 0; i < locales.length; i++) {
+            if (locales[i] == 'template.json') return;
+
             const lang = require(`../locales/${locales[i]}`);
 
             this.locales.set(lang.meta.iso, lang);
@@ -41,6 +43,16 @@ module.exports = class Translator {
     translate(key = null, options = {}) {
         if (this.locales.size < 1) {
             this.logger.error('There are no locales', { prefix: 'Translator' });
+            process.exit(1);
+        }
+
+        if (!this.locales.has(this.options.defaultLocale)) {
+            this.logger.error('The specified default locale does not exist', { prefix: 'Translator' });
+            process.exit(1);
+        }
+
+        if (!this.locales.has(this.options.fallbackLocale)) {
+            this.logger.error('The specified fallback locale does not exist', { prefix: 'Translator' });
             process.exit(1);
         }
 
