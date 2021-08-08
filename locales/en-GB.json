@@ -17,6 +17,7 @@
     "commands.admin.eval.hastebinError": "Failed to upload to Hastebin: %error%.",
     "commands.admin.mutual.none": "I have no mutual servers with %user%.",
     "commands.admin.reload.reloaded": "Reloaded command `%command%`.",
+    "commands.admin.translators.title_current-translators": "Current Translators",
     
     "commands.moderation.preventActionSelf": "You cannot %action% yourself.",
     "commands.moderation.preventActionOwner": "You cannot %action% the server owner.",
@@ -54,6 +55,9 @@
 
     "commands.roles.auto-role.added": "The %role% role will be given to all new members when they join the server.",
     "commands.roles.auto-role.removed": "The %role% role will no longer be given to all new members when they join the server.",
+    "commands.roles.role-menu.title_role-menu": "Role Menu",
+    "commands.roles.role-menu.title_choose-a-role": "Choose a role",
+    "commands.roles.role-menu.added": "Added the %role% role.\n%message_url%",
     
     "commands.server-settings.locale.current": "The current locale for this server is **%locale%**.",
     "commands.server-settings.locale.unknown": "I could not find that locale.",

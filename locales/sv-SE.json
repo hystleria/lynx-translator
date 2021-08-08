@@ -17,6 +17,7 @@
     "commands.admin.eval.hastebinError": "",
     "commands.admin.mutual.none": "",
     "commands.admin.reload.reloaded": "",
+    "commands.admin.translators.title_current-translators": "",
     
     "commands.moderation.preventActionSelf": "",
     "commands.moderation.preventActionOwner": "",
@@ -54,6 +55,9 @@
 
     "commands.roles.auto-role.added": "",
     "commands.roles.auto-role.removed": "",
+    "commands.roles.role-menu.title_role-menu": "",
+    "commands.roles.role-menu.title_choose-a-role": "",
+    "commands.roles.role-menu.added": "",
     
     "commands.server-settings.locale.current": "",
     "commands.server-settings.locale.unknown": "",
