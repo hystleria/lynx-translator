@@ -2,7 +2,8 @@
     "meta": {
         "name": "Greek (Greece)",
         "iso": "el-GR",
-        "authors": ["784719792807739392"]
+        "flag": "🇬🇷",
+        "authors": [{ "name": "Noah", "id": "784719792807739392" }]
     },
 
     "commands.permissions": "",

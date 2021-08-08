@@ -2,7 +2,8 @@
     "meta": {
         "name": "Finnish",
         "iso": "fi-FI",
-        "authors": ["596879758244053002"]
+        "flag": "🇫🇮",
+        "authors": [{ "name": "Archie", "id": "596879758244053002" }]
     },
 
     "commands.permissions": "Sinulla ei ole oikeutta käyttää komentoa `%name%`.\nPuuttuu: `%missing%`",

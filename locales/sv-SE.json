@@ -2,7 +2,8 @@
     "meta": {
         "name": "Swedish (Svenska)",
         "iso": "sv-SE",
-        "authors": ["673477059904929802"]
+        "flag": "🇸🇪",
+        "authors": [{ "name": "Kieran", "id": "673477059904929802" }]
     },
 
     "commands.permissions": "Du har inte behörighet att använda %name% kommandot.\nSaknas: `%missing%`",
