@@ -14,11 +14,10 @@ module.exports = class Translator {
     }
 
     /**
-     * Loads locales
+     * Registers locales
 	 * @returns {*}
 	 */
-    load() {
-        // Get the locales
+    registerLocales() {
         const directory = join(__dirname.substring(0, __dirname.length - 3), 'locales');
         const locales = readdirSync(directory);
         
@@ -26,19 +25,29 @@ module.exports = class Translator {
             this.logger.error('There are no locales', { prefix: 'Translator' });
             process.exit(1);
         }
-        
-        // Load the locales
+
         for (let i = 0; i < locales.length; i++) {
             if (locales[i] == 'template.json') return;
-
-            const lang = require(`../locales/${locales[i]}`);
-
-            this.locales.set(lang.meta.iso, lang);
-
-            if (this.options.logging) this.logger.info(`Locale ${lang.meta.iso} has been loaded`, { prefix: 'Translator' });
+            const locale = require(`../locales/${locales[i]}`);
+            this.registerLocale(locale.meta.iso, locale);
         }
     }
 
+    /**
+     * Registers a locale
+	 * @returns {*}
+	 */
+    registerLocale(name = null, locale = null) {
+        this.locales.set(name, locale);
+        this.logger.info(`Locale '${name}' has been registered`, { prefix: 'Translator' });
+
+        return locale;
+    }
+
+    /**
+     * Translates a string
+	 * @returns {String}
+	 */
     translate(key = null, options = {}) {
         if (this.locales.size < 1) {
             this.logger.error('There are no locales', { prefix: 'Translator' });
