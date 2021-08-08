@@ -7,8 +7,8 @@ module.exports = class Translator {
         this.locales = locales; // Empty locale collection
         this.path = path; // Location of the locale files
         this.options = options || {
-            defaultLocale: 'en-UK', // Default locale to use if server has not configured it
-            fallbackLocale: 'en-UK', // Fallback to this locale if key does not exist in the default or specified locale
+            defaultLocale: 'en-GB', // Default locale to use if server has not configured it
+            fallbackLocale: 'en-GB', // Fallback to this locale if key does not exist in the default or specified locale
             logging: true // Whether logging should be enabled or disabled
         };
         this.logger = new Logger('YYYY-MM-DD HH:mm:ss');
