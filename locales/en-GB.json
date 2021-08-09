@@ -11,14 +11,6 @@
     "commands.unknown": "I could not find that command or module.",
     "commands.invalidArgument": "Invalid `%argument%` argument given.\nUsage: `%usage%`",
     
-    "commands.admin.eval.maxOutputLength": "Output has exceeded `%length%` characters.",
-    "commands.admin.eval.hastebinUploading": "Uploading to Hastebin.",
-    "commands.admin.eval.hastebinUploaded": "Uploaded to Hastebin: %url%.",
-    "commands.admin.eval.hastebinError": "Failed to upload to Hastebin: %error%.",
-    "commands.admin.mutual.none": "I have no mutual servers with %user%.",
-    "commands.admin.reload.reloaded": "Reloaded command `%command%`.",
-    "commands.admin.translators.title_current-translators": "Current Translators",
-    
     "commands.moderation.preventActionSelf": "You cannot %action% yourself.",
     "commands.moderation.preventActionOwner": "You cannot %action% the server owner.",
     "commands.moderation.deleted-message-log.current": "Deleted messages are being logged in %channel%.",

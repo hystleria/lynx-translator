@@ -11,14 +11,6 @@
     "commands.unknown": "En löytänyt kyseistä komentoa tai moduulia.",
     "commands.invalidArgument": "Invalid `%argument%` argumentti annettu.\nKäyttö: `%usage%`",
     
-    "commands.admin.eval.maxOutputLength": "",
-    "commands.admin.eval.hastebinUploading": "",
-    "commands.admin.eval.hastebinUploaded": "",
-    "commands.admin.eval.hastebinError": "",
-    "commands.admin.mutual.none": "",
-    "commands.admin.reload.reloaded": "",
-    "commands.admin.translators.title_current-translators": "",
-    
     "commands.moderation.preventActionSelf": "",
     "commands.moderation.preventActionOwner": "",
     "commands.moderation.deleted-message-log.current": "",
