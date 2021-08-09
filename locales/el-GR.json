@@ -8,6 +8,7 @@
 
     "commands.permissions": "",
     "commands.arguments": "",
+    "commands.flags": "",
     "commands.unknown": "",
     "commands.invalidArgument": "",
     
