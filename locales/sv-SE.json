@@ -11,7 +11,7 @@
     "commands.flags": "",
     "commands.unknown": "Jag kunde inte hitta det kommandot eller modulen.",
     "commands.invalidArgument": "Ogiltigt %arguments% argument har angetts.\nAnvändning: `%usage%`",
-    "commands.invalidFlag": "",
+    "commands.invalidFlagValue": "",
     
     "commands.moderation.preventActionSelf": "",
     "commands.moderation.preventActionOwner": "",

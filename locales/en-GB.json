@@ -11,7 +11,7 @@
     "commands.flags": "Flag `%flag%` requires a value. Add `=VALUE_HERE` after the flag name.",
     "commands.unknown": "I could not find that command or module.",
     "commands.invalidArgument": "Invalid `%argument%` argument given.\nUsage: `%usage%`",
-    "commands.invalidFlag": "Flag `%flag%` was provided an invalid value `%value%`.",
+    "commands.invalidFlagValue": "Flag `%flag%` was provided an invalid value `%value%`.",
     
     "commands.moderation.preventActionSelf": "You cannot %action% yourself.",
     "commands.moderation.preventActionOwner": "You cannot %action% the server owner.",
