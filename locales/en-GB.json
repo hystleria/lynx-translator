@@ -68,6 +68,7 @@
     "commands.util.help.title_modules": "Modules",
     "commands.util.help.title_usage": "Usage",
     "commands.util.help.title_examples": "Examples",
+    "commands.util.help.title_flags": "Flags",
     "commands.util.help.title_aliases": "Aliases",
     "commands.util.help.title_permissions": "Permissions",
     "commands.util.ping.pinging": "Pinging...",

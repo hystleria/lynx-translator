@@ -69,6 +69,7 @@
     "commands.util.help.title_usage": "",
     "commands.util.help.title_examples": "",
     "commands.util.help.title_aliases": "",
+    "commands.util.help.title_flags": "",
     "commands.util.help.title_permissions": "",
     "commands.util.ping.pinging": "",
     "commands.util.ping.ping": "",
