@@ -11,6 +11,7 @@
     "commands.flags": "",
     "commands.unknown": "En löytänyt kyseistä komentoa tai moduulia.",
     "commands.invalidArgument": "Invalid `%argument%` argumentti annettu.\nKäyttö: `%usage%`",
+    "commands.invalidFlag": "",
     
     "commands.moderation.preventActionSelf": "",
     "commands.moderation.preventActionOwner": "",

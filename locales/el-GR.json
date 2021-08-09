@@ -11,6 +11,7 @@
     "commands.flags": "",
     "commands.unknown": "",
     "commands.invalidArgument": "",
+    "commands.invalidFlag": "",
     
     "commands.moderation.preventActionSelf": "",
     "commands.moderation.preventActionOwner": "",
