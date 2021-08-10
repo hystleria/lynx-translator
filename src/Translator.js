@@ -17,7 +17,7 @@ module.exports = class Translator {
      * Registers locales
 	 * @returns {*}
 	 */
-    registerLocales() {
+    register() {
         const directory = join(__dirname.substring(0, __dirname.length - 3), 'locales');
         const locales = readdirSync(directory);
         
@@ -29,19 +29,15 @@ module.exports = class Translator {
         for (let i = 0; i < locales.length; i++) {
             if (locales[i] == 'template.json') return;
             const locale = require(`../locales/${locales[i]}`);
-            this.registerLocale(locale.meta.iso, locale);
+            
+            // Cache locale
+            this.locales.set(locale.meta.iso, locale);
+            
+            // Log
+            this.logger.info(`Locale '${name}' has been registered`, { prefix: 'Translator' });
         }
-    }
 
-    /**
-     * Registers a locale
-	 * @returns {*}
-	 */
-    registerLocale(name = null, locale = null) {
-        this.locales.set(name, locale);
-        this.logger.info(`Locale '${name}' has been registered`, { prefix: 'Translator' });
-
-        return locale;
+        return this.locales;
     }
 
     /**
