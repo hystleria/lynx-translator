@@ -34,7 +34,7 @@ module.exports = class Translator {
             this.locales.set(locale.meta.iso, locale);
             
             // Log
-            this.logger.info(`Locale '${name}' has been registered`, { prefix: 'Translator' });
+            this.logger.info(`Locale '${locale.meta.iso}' has been registered`, { prefix: 'Translator' });
         }
 
         return this.locales;
