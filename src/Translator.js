@@ -8,7 +8,6 @@ module.exports = class Translator {
         this.options = options || {
             defaultLocale: 'en-GB', // Default locale to use if server has not configured it
             fallbackLocale: 'en-GB', // Fallback to this locale if key does not exist in the default or specified locale
-            logging: true // Whether logging should be enabled or disabled
         };
         this.logger = new Logger('YYYY-MM-DD HH:mm:ss');
     }
@@ -18,6 +17,8 @@ module.exports = class Translator {
 	 * @returns {*}
 	 */
     register() {
+        this.logger.debug('Registering locales', { prefix: 'Translator' });
+        
         const directory = join(__dirname.substring(0, __dirname.length - 3), 'locales');
         const locales = readdirSync(directory);
         
@@ -32,9 +33,6 @@ module.exports = class Translator {
             
             // Cache locale
             this.locales.set(locale.meta.iso, locale);
-            
-            // Log
-            this.logger.info(`Locale '${locale.meta.iso}' has been registered`, { prefix: 'Translator' });
         }
 
         return this.locales;
