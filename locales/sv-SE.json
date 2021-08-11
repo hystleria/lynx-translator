@@ -8,10 +8,10 @@
 
     "commands.permissions": "Du har inte behörighet att använda %name% kommandot.\nSaknas: `%missing%`",
     "commands.arguments": "För få argument har angetts.\nAnvändning: `%usage%`",
-    "commands.flags": "",
+    "commands.flags": "Flaggen %flag% kräver ett värde. Lägg till `=VALUE_HERE` efter flaggnamnet.",
     "commands.unknown": "Jag kunde inte hitta det kommandot eller modulen.",
     "commands.invalidArgument": "Ogiltigt %arguments% argument har angetts.\nAnvändning: `%usage%`",
-    "commands.invalidFlagValue": "",
+    "commands.invalidFlagValue": "Flaggan '%flag%' tillhandahölls ett ogiltigt värde '%value%'",
     
     "commands.moderation.preventActionSelf": "",
     "commands.moderation.preventActionOwner": "",
@@ -49,9 +49,9 @@
 
     "commands.roles.auto-role.added": "",
     "commands.roles.auto-role.removed": "",
-    "commands.roles.role-menu.title_role-menu": "",
-    "commands.roles.role-menu.title_choose-a-role": "",
-    "commands.roles.role-menu.added": "",
+    "commands.roles.role-menu.title_role-menu": "Rollmeny",
+    "commands.roles.role-menu.title_choose-a-role": "Välj en roll",
+    "commands.roles.role-menu.added": "Rollen %role% har lagts till.\n%message_url%",
     
     "commands.server-settings.locale.current": "",
     "commands.server-settings.locale.unknown": "",
@@ -71,7 +71,7 @@
     "commands.util.help.title_usage": "",
     "commands.util.help.title_examples": "",
     "commands.util.help.title_aliases": "",
-    "commands.util.help.title_flags": "",
+    "commands.util.help.title_flags": "Flaggens",
     "commands.util.help.title_permissions": "",
     "commands.util.ping.pinging": "",
     "commands.util.ping.ping": "",
